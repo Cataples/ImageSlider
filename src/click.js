@@ -1,4 +1,5 @@
 import { images } from "./app";
+import { checkBullets } from "./bullets"
 
 const container = document.getElementsByClassName("viewport")[0]; 
 const rightBtn = document.getElementsByClassName("rightButton")[0];
@@ -24,6 +25,7 @@ let changePicture = function(){
             setTimeout( () => {
                 buttonActive = true;
             }, 1000)
+            checkBullets();
         }
     }
 
@@ -44,6 +46,7 @@ let changePicture = function(){
             setTimeout( () => {
                 buttonActive = true;
             }, 1000)
+            checkBullets();
         }
     }
 

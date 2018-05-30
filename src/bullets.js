@@ -27,7 +27,16 @@ const clickBullets = function() {
 
 const checkBullets = function() {
     const oldLeft = imgsContainer.style.left.split("px")[0];
-    console.log(oldLeft); 
+    const bulletsArray = [...bullets];
+    bulletsArray.forEach((element) => 
+
+    //RAMAS de
+    //  luat element id
+    //     verificat leftul la container, apoi facut activ elementul cu id in functie de left
+
+
+        let elementId = element.id;
+        console.log(elementId);
 }
 
-export { addBullets, clickBullets };
+export { addBullets, clickBullets, checkBullets };
