@@ -1,0 +1,65 @@
+.clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.viewport {
+    border: 1px solid black;
+    width: 900px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    width: 900px;
+    height: 600px;
+} 
+
+.image-container {
+    position: absolute;
+    height: 600px;
+    width: 6300px;
+}
+
+.viewport button {
+    position: absolute;
+    height: 30px;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 2;
+}
+
+.viewport button:nth-child(1) {
+    left:0;
+}
+
+.viewport button:nth-child(2) {
+    right: 0;
+}
+
+.bullet-container {
+    position: relative;
+    top: 500px;
+    margin: 0 auto;
+    width: auto;
+    height: 30px;
+}
+
+.bullet {
+    border-radius: 50%;
+    position: relative;
+    background-color: grey;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    float: left;
+    display: inline;
+}
+
+.bullet:hover {
+    background-color: #334455;
+    cursor: pointer;
+}
