@@ -1,5 +1,5 @@
 import { images, addImages } from "./app";
-import { rightClick, leftClick, changePicture } from "./click";
+import { changePicture } from "./click";
 import { addBullets, clickBullets, checkBullets } from "./bullets";
 import { onMousemove, onMouseMove } from "./drag.js";
 

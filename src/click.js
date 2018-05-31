@@ -82,4 +82,4 @@ let changePicture = function(){
 
 };
 
-export { rightClick, leftClick, changePicture };
+export { changePicture };
