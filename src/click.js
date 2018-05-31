@@ -7,7 +7,7 @@ const leftBtn = document.getElementsByClassName("leftButton")[0];
 const imgsContainer = document.getElementsByClassName("image-container")[0];
 let buttonActive = true;
 
-let changePicture = function(){
+const changePicture = function(){
     function rightClick() {
         const oldLeft = imgsContainer.style.left.split("px")[0];
         if(buttonActive === true) {
