@@ -17,10 +17,10 @@ let changePicture = function(){
             if((parseInt(oldLeft)) === ( -1 * (parseInt(images.length - 2) * 900))) {
                 imgsContainer.style.transition = "all 1s";
                 imgsContainer.style.left = (parseInt(oldLeft) - 900) + "px";
-            setTimeout( () => {
-                imgsContainer.style.transition = "none";
-                imgsContainer.style.left = "900px";
-            }, 1000)
+                setTimeout( () => {
+                    imgsContainer.style.transition = "none";
+                    imgsContainer.style.left = "900px";
+                }, 1000)
             } else if (parseInt(oldLeft, 10) === (-1 * ((images.length -1) * 900))) {
                 imgsContainer.style.transition = "none";
                 imgsContainer.style.left = "900px";
@@ -46,10 +46,10 @@ let changePicture = function(){
             if(parseInt(oldLeft, 10) === 0) { 
                 imgsContainer.style.transition = "all 1s";
                 imgsContainer.style.left = (parseInt(oldLeft) + 900) + "px";           
-            setTimeout( () => {
-                imgsContainer.style.transition = "none";
-                imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
-            }, 1000);
+                setTimeout( () => {
+                    imgsContainer.style.transition = "none";
+                    imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
+                }, 1000);
             } else if (parseInt(oldLeft, 10) === 900) {
                 imgsContainer.style.transition = "none";
                 imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
