@@ -77,5 +77,8 @@ function onMouseMove(event) {
         checkBullets();
     })
 
+const onMoseMoveEvent = function() {
+    document.addEventListener("mousemove", onMouseMove);
+}
 
-export { onMouseMove };
+export { onMoseMoveEvent };

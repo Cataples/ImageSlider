@@ -1,7 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 .clearfix::after {
     display: table;
     content: "";
     clear: both;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.display {
+    visibility: visible;
+    opacity: 1;
+    transition: 1s;
 }
 
 .viewport {
@@ -56,7 +72,7 @@
 .bullet {
     border-radius: 50%;
     position: relative;
-    background-color: grey;
+    background-color: #2a2f30;
     width: 30px;
     height: 30px;
     margin: 0 10px;
@@ -65,10 +81,12 @@
 }
 
 .bullet:hover {
-    background-color: #334455;
+    background-color: #74888c;
     cursor: pointer;
 }
 
 .active-bullet {
     background-color: white;
+    border: 1px solid black;
 }
+

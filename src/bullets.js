@@ -1,12 +1,13 @@
 import { images } from "./app";
 
+const container = document.getElementsByClassName("viewport")[0]; 
 const imgsContainer = document.getElementsByClassName("image-container")[0];
 const bulletContainer = document.getElementsByClassName("bullet-container")[0];
 const bullets = document.getElementsByClassName("bullet");
 
 const addBullets = function() {
     images.forEach((image, imageIndex) => {
-        bulletContainer.innerHTML += `<div class="bullet" id="bullet-${imageIndex}"></div>`
+        bulletContainer.innerHTML += `<div class="bullet hide" id="bullet-${imageIndex}"></div>`
     })
     bulletContainer.style.width = ((images.length) * 50) + "px";
 }
@@ -37,4 +38,26 @@ const checkBullets = function() {
     })
 }
 
-export { addBullets, clickBullets, checkBullets };
+
+const ToogleBullets = function() {
+    const displayBullets = function() {
+        const bulletsArray = [...bullets];
+        bulletsArray.forEach((bullet) => {
+            bullet.classList.remove("hide");
+            bullet.classList.add("display");
+        })
+    }
+
+    const hideBullets = function() {
+        const bulletsArray = [...bullets];
+        bulletsArray.forEach((bullet) => {
+            bullet.classList.remove("display");
+            bullet.classList.add("hide");
+        })
+    }
+
+    container.addEventListener("mouseover", displayBullets);
+    container.addEventListener("mouseout", hideBullets);
+}
+
+export { addBullets, clickBullets, checkBullets, ToogleBullets };
