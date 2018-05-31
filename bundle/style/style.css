@@ -21,7 +21,6 @@
 .image-container {
     position: absolute;
     height: 600px;
-    width: 6300px;
 }
 
 .viewport button {
@@ -62,4 +61,8 @@
 .bullet:hover {
     background-color: #334455;
     cursor: pointer;
+}
+
+.active-bullet {
+    background-color: #223344;
 }

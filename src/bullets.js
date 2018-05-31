@@ -19,7 +19,6 @@ const clickBullets = function() {
             let bulletShortId = (bulletId.substr(7, bulletId.length));
             imgsContainer.style.transition = "all 1s";
             imgsContainer.style.left = ((-1 * 900) * bulletShortId) + "px";
-
             checkBullets();
         })
     })
@@ -28,15 +27,14 @@ const clickBullets = function() {
 const checkBullets = function() {
     const oldLeft = imgsContainer.style.left.split("px")[0];
     const bulletsArray = [...bullets];
-    bulletsArray.forEach((element) => 
-
-    //RAMAS de
-    //  luat element id
-    //     verificat leftul la container, apoi facut activ elementul cu id in functie de left
-
-
-        let elementId = element.id;
-        console.log(elementId);
+    bulletsArray.forEach( (element) => {
+        element.classList.remove("active-bullet");
+        if (oldLeft / (-900) === parseInt(element.id.substr(7, element.id.length))) {
+            element.classList.add("active-bullet");
+        } else if (oldLeft == 900) {
+            bulletsArray[4].classList.add("active-bullet");
+        }
+    })
 }
 
 export { addBullets, clickBullets, checkBullets };

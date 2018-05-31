@@ -30,9 +30,9 @@ let changePicture = function(){
     }
 
     function leftClick() {
+        const oldLeft = imgsContainer.style.left.split("px")[0];
         if (buttonActive === true) {
             buttonActive = false;
-            const oldLeft = imgsContainer.style.left.split("px")[0];
             imgsContainer.style.transition = "all 1s";
             imgsContainer.style.left = (parseInt(oldLeft) + 900) + "px";
             if(parseInt(oldLeft, 10) === 0) { 
@@ -42,7 +42,15 @@ let changePicture = function(){
                 imgsContainer.style.transition = "none";
                 imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
             }, 1000);
-        }
+            } else if (parseInt(oldLeft, 10) === 900) {
+                imgsContainer.style.transition = "none";
+                imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
+                setTimeout( () => {
+                    imgsContainer.style.transition = "all 1s";
+                    imgsContainer.style.left = ( -1 * (parseInt(images.length - 2) * 900)) + "px";
+                    checkBullets();
+                }, 0);
+            }
             setTimeout( () => {
                 buttonActive = true;
             }, 1000)

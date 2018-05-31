@@ -7,9 +7,11 @@ const addImages = function() {
     images.forEach((image, imageIndex) => {
         let AddedImage = (`<img src = "../images/${image}" class="image" style="left:${parseInt(imageIndex) * 900}px">`);
         imgsContainer.innerHTML += AddedImage;
+        imgsContainer.style.width = ((images.length + 1) * 900) + "px";
     })
     imgsContainer.innerHTML += `<img src = "../images/${images[0]}" class="image" style="left:${images.length * 900}px">`
 }
+
 
 export { images, addImages };
 

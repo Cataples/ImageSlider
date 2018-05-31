@@ -1,6 +1,6 @@
 import { images, addImages } from "./app";
 import { rightClick, leftClick, changePicture } from "./click";
-import { addBullets, clickBullets } from "./bullets";
+import { addBullets, clickBullets, checkBullets } from "./bullets";
 
 const container = document.getElementsByClassName("viewport")[0]; 
 const rightBtn = document.getElementsByClassName("rightButton")[0];
@@ -15,3 +15,4 @@ addImages();
 changePicture();
 addBullets();
 clickBullets();
+checkBullets();
