@@ -66,8 +66,19 @@ let changePicture = function(){
         }
     }
 
+    function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '39') {
+            rightClick();
+        } else if (e.keyCode == "37") {
+            leftClick();
+        }
+    }
+
     rightBtn.addEventListener("click", rightClick);
-    leftBtn.addEventListener("click", (leftClick))
+    leftBtn.addEventListener("click", leftClick);
+    document.onkeydown = checkKey;
+
 
 };
 
