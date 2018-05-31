@@ -12,7 +12,6 @@ function onMouseMove(event) {
     const oldLeft = imgsContainer.style.left.split("px")[0]; 
     let actualRight = event.clientX;     
     if (mouseMove === true) { 
-        console.log("moving true"); 
         if (buttonActive == true){  
             buttonActive = false;
             if ( actualRight < initialRight ) {
@@ -36,7 +35,6 @@ function onMouseMove(event) {
                 }
                 setTimeout( () => {
                     buttonActive = true;
-                    console.log("button active");
                 }, 1000)
                 checkBullets();
             } else {
@@ -61,11 +59,9 @@ function onMouseMove(event) {
                 }
                 setTimeout( () => {
                     buttonActive = true;
-                    console.log("button active");
                 }, 1000)
                 checkBullets();
-            }
-    
+            } 
     }
 }
     checkBullets();
