@@ -16,6 +16,12 @@
     position: absolute;
     width: 900px;
     height: 600px;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 } 
 
 .image-container {
@@ -64,5 +70,5 @@
 }
 
 .active-bullet {
-    background-color: #223344;
+    background-color: white;
 }

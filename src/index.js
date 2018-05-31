@@ -1,6 +1,7 @@
 import { images, addImages } from "./app";
 import { rightClick, leftClick, changePicture } from "./click";
 import { addBullets, clickBullets, checkBullets } from "./bullets";
+import { onMousemove, onMouseMove } from "./drag.js";
 
 const container = document.getElementsByClassName("viewport")[0]; 
 const rightBtn = document.getElementsByClassName("rightButton")[0];
@@ -16,3 +17,4 @@ changePicture();
 addBullets();
 clickBullets();
 checkBullets();
+document.addEventListener("mousemove", onMouseMove);
