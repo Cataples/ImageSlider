@@ -3,7 +3,7 @@ import { changePicture } from "./click";
 import { addBullets, clickBullets, checkBullets, ToogleBullets } from "./bullets";
 import { onMoseMoveEvent } from "./drag.js";
 
-const imgsContainer = document.getElementsByClassName("image-container")[0];
+const imgsContainer = document.querySelector(".image-container");
 
 imgsContainer.style.left = "0px";
 

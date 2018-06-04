@@ -1,23 +1,23 @@
 import { images } from "./app";
 
-const container = document.getElementsByClassName("viewport")[0]; 
-const imgsContainer = document.getElementsByClassName("image-container")[0];
-const bulletContainer = document.getElementsByClassName("bullet-container")[0];
+const container = document.querySelector(".viewport");
+const imgsContainer = document.querySelector(".image-container");
+const bulletContainer = document.querySelector(".bullet-container");
 const bullets = document.getElementsByClassName("bullet");
 
-const addBullets = function() {
+const addBullets = () => {
     images.forEach((image, imageIndex) => {
         bulletContainer.innerHTML += `<div class="bullet hide" id="bullet-${imageIndex}"></div>`
     })
     bulletContainer.style.width = ((images.length) * 50) + "px";
 }
 
-const clickBullets = function() {
+const clickBullets = () => {
     const bulletsArray = [...bullets];
     (bulletsArray).forEach((bullet, bulletIndex) => {
         bullet.addEventListener("click", function(event) {
-            let bulletId = (event.path[0].id);
-            let bulletShortId = (bulletId.substr(7, bulletId.length));
+            const bulletId = (event.path[0].id);
+            const bulletShortId = (bulletId.substr(7, bulletId.length));
             imgsContainer.style.transition = "all 1s";
             imgsContainer.style.left = ((-1 * 900) * bulletShortId) + "px";
             checkBullets();
@@ -25,21 +25,22 @@ const clickBullets = function() {
     })
 }
 
-const checkBullets = function() {
+const checkBullets = () => {
     const oldLeft = imgsContainer.style.left.split("px")[0];
     const bulletsArray = [...bullets];
     bulletsArray.forEach( (element) => {
         element.classList.remove("active-bullet");
-        if (oldLeft / (-900) === parseInt(element.id.substr(7, element.id.length))) {
+        const ElementNumericId = parseInt(element.id.substr(7, element.id.length));
+        if (oldLeft / (-900) === ElementNumericId) {
             element.classList.add("active-bullet");
-        } else if (oldLeft == 900) {
+        } else if (parseInt(oldLeft) === 900) {
             bulletsArray[4].classList.add("active-bullet");
         }
     })
 }
 
 
-const ToogleBullets = function() {
+const ToogleBullets = () => {
     const displayBullets = function() {
         const bulletsArray = [...bullets];
         bulletsArray.forEach((bullet) => {
@@ -48,7 +49,7 @@ const ToogleBullets = function() {
         })
     }
 
-    const hideBullets = function() {
+    const hideBullets = () => {
         const bulletsArray = [...bullets];
         bulletsArray.forEach((bullet) => {
             bullet.classList.remove("display");

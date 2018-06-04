@@ -1,8 +1,8 @@
 import { checkBullets } from "./bullets"
 import { images } from "./app";
 
-const container = document.getElementsByClassName("viewport")[0]; 
-const imgsContainer = document.getElementsByClassName("image-container")[0];
+const container = document.querySelector(".viewport"); 
+const imgsContainer = document.querySelector(".image-container");
 
 let mouseMove;
 let initialRight;

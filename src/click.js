@@ -1,13 +1,13 @@
 import { images } from "./app";
 import { checkBullets } from "./bullets"
 
-const container = document.getElementsByClassName("viewport")[0]; 
-const rightBtn = document.getElementsByClassName("rightButton")[0];
-const leftBtn = document.getElementsByClassName("leftButton")[0];
-const imgsContainer = document.getElementsByClassName("image-container")[0];
+const container = document.querySelector(".viewport"); 
+const rightBtn = document.querySelector(".rightButton");
+const leftBtn = document.querySelector(".leftButton");
+const imgsContainer = document.querySelector(".image-container");
 let buttonActive = true;
 
-const changePicture = function(){
+const changePicture = () => {
     function rightClick() {
         const oldLeft = imgsContainer.style.left.split("px")[0];
         if(buttonActive === true) {
