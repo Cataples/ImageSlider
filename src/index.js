@@ -3,9 +3,9 @@ import { changePicture } from "./click";
 import { addBullets, clickBullets, checkBullets, ToogleBullets } from "./bullets";
 import { onMoseMoveEvent } from "./drag.js";
 
-const imgsContainer = document.querySelector(".image-container");
+const imagesContainer = document.querySelector(".image-container");
 
-imgsContainer.style.left = "0px";
+imagesContainer.style.left = "0px";
 
 addImages();
 changePicture();

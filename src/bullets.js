@@ -1,7 +1,7 @@
-import { images } from "./app";
+import { images, moveFrame } from "./app";
 
 const container = document.querySelector(".viewport");
-const imgsContainer = document.querySelector(".image-container");
+const imagesContainer = document.querySelector(".image-container");
 const bulletContainer = document.querySelector(".bullet-container");
 const bullets = document.getElementsByClassName("bullet");
 
@@ -18,15 +18,14 @@ const clickBullets = () => {
         bullet.addEventListener("click", function(event) {
             const bulletId = (event.path[0].id);
             const bulletShortId = (bulletId.substr(7, bulletId.length));
-            imgsContainer.style.transition = "all 1s";
-            imgsContainer.style.left = ((-1 * 900) * bulletShortId) + "px";
+            moveFrame("all 1s", ((-1 * 900) * bulletShortId) + "px");
             checkBullets();
         })
     })
 }
 
 const checkBullets = () => {
-    const oldLeft = imgsContainer.style.left.split("px")[0];
+    const oldLeft = imagesContainer.style.left.split("px")[0];
     const bulletsArray = [...bullets];
     bulletsArray.forEach( (element) => {
         element.classList.remove("active-bullet");

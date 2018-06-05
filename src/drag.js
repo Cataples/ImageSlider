@@ -1,35 +1,30 @@
 import { checkBullets } from "./bullets"
-import { images } from "./app";
+import { images, moveFrame } from "./app";
 
 const container = document.querySelector(".viewport"); 
-const imgsContainer = document.querySelector(".image-container");
+const imagesContainer = document.querySelector(".image-container");
 
 let mouseMove;
 let initialRight;
 let buttonActive = true;
 
-function onMouseMove(event) {  
-    const oldLeft = imgsContainer.style.left.split("px")[0]; 
+const onMouseMove = (event) => {  
+    const oldLeft = imagesContainer.style.left.split("px")[0]; 
     let actualRight = event.clientX;     
     if (mouseMove === true) { 
         if (buttonActive == true){  
             buttonActive = false;
             if (actualRight < initialRight) {
-                imgsContainer.style.transition = "all 1s";
-                imgsContainer.style.left = (parseInt(oldLeft) - 900) + "px";
+                moveFrame("all 1s", (parseInt(oldLeft) - 900) + "px");
                 if((parseInt(oldLeft)) === ( -1 * (parseInt(images.length - 2) * 900))) {
-                    imgsContainer.style.transition = "all 1s";
-                    imgsContainer.style.left = (parseInt(oldLeft) - 900) + "px";
+                    moveFrame("all 1s", (parseInt(oldLeft) - 900) + "px")
                     setTimeout( () => {
-                        imgsContainer.style.transition = "none";
-                        imgsContainer.style.left = "900px";
+                        moveFrame("none", "900px");
                     }, 1000)
                 } else if (parseInt(oldLeft, 10) === (-1 * ((images.length -1) * 900))) {
-                    imgsContainer.style.transition = "none";
-                    imgsContainer.style.left = "900px";
+                    moveFrame("none", "900px");
                     setTimeout( () => {
-                        imgsContainer.style.transition = "all 1s";
-                        imgsContainer.style.left = "0px";
+                        moveFrame("all 1s", "0px");
                         checkBullets();
                     }, 0);
                 }
@@ -39,21 +34,16 @@ function onMouseMove(event) {
                 checkBullets();
             } else {
                 buttonActive = false;
-                imgsContainer.style.transition = "all 1s";
-                imgsContainer.style.left = (parseInt(oldLeft) + 900) + "px";
+                moveFrame("all 1s", (parseInt(oldLeft) + 900) + "px");
                 if(parseInt(oldLeft, 10) === 0) { 
-                    imgsContainer.style.transition = "all 1s";
-                    imgsContainer.style.left = (parseInt(oldLeft) + 900) + "px";           
+                    moveFrame("all 1s", (parseInt(oldLeft) + 900) + "px");
                     setTimeout( () => {
-                        imgsContainer.style.transition = "none";
-                        imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
+                        moveFrame("none", ( -1 * (parseInt(images.length - 1) * 900)) + "px");
                     }, 1000);
                 } else if (parseInt(oldLeft, 10) === 900) {
-                    imgsContainer.style.transition = "none";
-                    imgsContainer.style.left = ( -1 * (parseInt(images.length - 1) * 900)) + "px";
+                    moveFrame("none", ( -1 * (parseInt(images.length - 1) * 900)) + "px");
                     setTimeout( () => {
-                        imgsContainer.style.transition = "all 1s";
-                        imgsContainer.style.left = ( -1 * (parseInt(images.length - 2) * 900)) + "px";
+                        moveFrame("all 1s", ( -1 * (parseInt(images.length - 2) * 900)) + "px");
                         checkBullets();
                     }, 0);
                 }
@@ -77,7 +67,7 @@ function onMouseMove(event) {
         checkBullets();
     })
 
-const onMoseMoveEvent = function() {
+const onMoseMoveEvent = () => {
     document.addEventListener("mousemove", onMouseMove);
 }
 
